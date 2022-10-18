@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #D7FBE8;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:100vh;
+}
+
+.generator p{
+    font-size:4rem;
+    margin:2rem;
+    color:#1FAB89;
+}
+
+.generator #pass{
+    font-size:3rem;
+    padding:1rem;
+    background-color:#9DF3C4;
+    border:none;
+    color:#1FAB89;
+    border-radius:1rem;
+    margin:2rem;
+    text-align:center;
+}
+
+.generator #pass:focus{
+    outline-color:#1FAB89;
+}
+
+.generator #pass::placeholder{
+    color:#1FAB89;
+}
+
+
+.generator .buttons {
+    display:flex;
+    justify-content:space-evenly;
+    margin-top: 2rem;
+}
+
+.generator button {
+    position: relative;
+    padding: 1rem;
+    background-color:#1FAB89;
+    color: #D7FBE8;
+    border: none;
+    border-radius:1rem;
+    cursor: pointer;
+    font-size:2rem;
+    transition: 0.2s;
+}
+
+.generator button:hover {
+    background-color:#62D2A2;
+}
+
+.generator #copy::before {
+    position: absolute;
+    content: "Copied";
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #1FAB89;
+    transition: 0.2s linear;
+    z-index: -1;
+}
+
+.generator input.active ~ .buttons #copy::before {
+    left: -7rem;
+}
+
+@media(max-width:768px){
+    
+
+    .generator p{
+        font-size:2rem;
+        margin:1rem;
+    }
+
+    .generator #pass{
+        font-size:1.5rem;
+        margin:1rem;
+    }
+
+    .generator button {
+        font-size:1rem;
+    }
+
+    .generator input.active ~ .buttons #copy::before {
+        left: -3.5rem;
+    }
+}
